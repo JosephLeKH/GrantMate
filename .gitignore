@@ -1,0 +1,147 @@
+# ========================================
+# SECURITY & CONFIGURATION
+# ========================================
+# Never commit sensitive files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+credentials.json
+secrets.json
+config.local.*
+
+# API Keys and tokens
+*_key.txt
+*_token.txt
+api_keys/
+secrets/
+
+# ========================================
+# PYTHON
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Cache & embeddings
+.cache/
+*.pkl
+*.pickle
+embeddings_*.pkl
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+*.venv/
+
+# ========================================
+# NODE / JAVASCRIPT
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+dist-ssr/
+*.local
+.next/
+out/
+.vercel/
+.netlify/
+
+# ========================================
+# IDE & EDITORS
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-*
+.project
+.classpath
+.settings/
+
+# ========================================
+# DEPLOYMENT & INFRASTRUCTURE
+# ========================================
+# Deployment configs (keep examples, ignore actual configs)
+railway.json
+railway.toml
+vercel.json
+!railway.json.example
+!vercel.json.example
+
+# Docker
+.dockerignore
+
+# ========================================
+# LOGS & TEMPORARY FILES
+# ========================================
+logs/
+*.log
+*.log.*
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+coverage/
+*.cover
+
+# Temporary files
+*.tmp
+*.bak
+temp/
+tmp/
+
+# ========================================
+# OS & SYSTEM
+# ========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================================
+# PROJECT SPECIFIC
+# ========================================
+# Any local testing/demo files
+demo_local/
+test_local/
+private/
+local_only/
+

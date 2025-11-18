@@ -1,0 +1,27 @@
+{
+  "name": "grantmate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "preview": "vite preview --port 8080",
+    "start": "vite"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "lovable-tagger": "^1.1.11",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  }
+}
