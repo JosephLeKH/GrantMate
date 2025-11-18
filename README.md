@@ -21,18 +21,18 @@
 
 ## 📖 The Problem
 
-Project Homeless Connect (PHC), a San Francisco nonprofit serving 15,000+ individuals experiencing homelessness annually, faces a critical challenge: **a funding cliff**. As public grants become increasingly scarce, they must pivot to private foundation funding to survive.
+Project Homeless Connect (PHC), a San Francisco nonprofit serving 15,000+ individuals experiencing homelessness annually, faces a critical funding challenge. As public grants become increasingly competitive, they need to apply to more private foundations to sustain operations.
 
-### The Real Impact
+### The Real Challenge
 
-**Each grant application takes a full week to complete**, and PHC needs to submit dozens per year to remain sustainable. The process is grueling:
+**Grant applications take significant time to complete** - often a week or more per application. For a small nonprofit that needs to submit multiple grants per year, this creates real problems:
 
-- 📝 **Lengthy applications** with complex requirements
-- 🎯 **Sponsor-specific tailoring** - each funder has unique priorities
-- 📊 **Data synthesis** - gathering statistics, outcomes, and impact stories from scattered sources
-- ⏰ **Time-intensive** - pulling staff away from direct service delivery
+- 📝 **Complex requirements** - Applications are lengthy with specific formatting
+- 🎯 **Sponsor-specific tailoring** - Each funder has unique priorities and language
+- 📊 **Data gathering** - Statistics and impact stories are scattered across documents
+- ⏰ **Staff capacity** - Time spent writing grants means less time serving the community
 
-**This isn't about slapping AI on everything.** This is about solving a genuine, urgent problem: **How can we help nonprofits survive by drastically reducing the time to write high-quality grant applications?**
+This project addresses a real problem: helping nonprofits write grant applications more efficiently without sacrificing quality.
 
 ---
 
@@ -40,7 +40,7 @@ Project Homeless Connect (PHC), a San Francisco nonprofit serving 15,000+ indivi
 
 **GrantMate** uses Retrieval-Augmented Generation (RAG) and Google's Gemini AI to transform grant writing from a week-long ordeal into a streamlined, intelligent process.
 
-![Application Interface](.github/screenshots/main-interface.png)
+![Application Interface](.github/screenshots/sponsor-fit-analysis.png)
 
 ### How It Works
 
@@ -52,13 +52,13 @@ Project Homeless Connect (PHC), a San Francisco nonprofit serving 15,000+ indivi
 
 ### What Makes It Different
 
-**This isn't just another ChatGPT wrapper.** GrantMate is purpose-built for grant writing:
+GrantMate is built specifically for grant writing with several key features:
 
-- ✅ **Grounded in Truth** - Only uses verified organizational data, never invents capabilities
-- ✅ **Source Attribution** - Every claim is cited with knowledge base sources
-- ✅ **Sponsor Intelligence** - Analyzes fit and explains how responses were tailored
-- ✅ **Self-Aware** - Provides fit scores and explains strengths/gaps honestly
-- ✅ **Built for Impact** - Designed with nonprofit staff feedback and real grant requirements
+- ✅ **Grounded in verified data** - Uses only documented organizational information
+- ✅ **Source attribution** - Cites knowledge base sources for transparency
+- ✅ **Sponsor analysis** - Helps tailor responses to specific funders
+- ✅ **Honest assessment** - Provides fit scores that acknowledge both strengths and gaps
+- ✅ **Real feedback** - Built based on conversations with PHC staff about actual needs
 
 ---
 
@@ -96,29 +96,29 @@ Provide information about the grant sponsor, and GrantMate will:
 - Explain the optimization strategy
 
 **Example:**
-> *"Responses were optimized for Kaiser Permanente by emphasizing PHC's health service coordination (2,745 vision care participants, 114 dental coordination) and using terminology like 'health equity' and 'coordinated care' that align with their mission. We highlighted PHC's 96% satisfaction rate and measurable health outcomes to address their focus on community impact metrics."*
+> *"Responses emphasized PHC's health service coordination and used terminology like 'health equity' that aligns with the sponsor's stated priorities."*
 
 ### 🛡️ Truth Guardrails
 
-**Critical safety features** prevent AI hallucinations:
+Built-in safeguards to maintain accuracy:
 
-- 🔒 **Only Real Capabilities** - Never invents services or programs
-- 🔍 **Verified Data Only** - All statistics from knowledge base
-- ⚖️ **Precise Language** - Distinguishes "provides" vs "coordinates" vs "connects to"
-- 🚫 **No Fabrication** - If something isn't in the knowledge base, it won't be claimed
-- 💰 **Financial Privacy** - Never discloses past fundraising that could hurt applications
+- 🔒 **Knowledge base only** - Responses use documented organizational information
+- 🔍 **Source tracking** - All statistics come from verified documents
+- ⚖️ **Precise language** - Distinguishes between services directly provided vs coordinated
+- 🚫 **No invention** - Won't claim capabilities not in the knowledge base
+- 💰 **Financial discretion** - Avoids disclosing potentially sensitive funding information
 
 ### ⚡ Performance Optimizations
 
 **Smart Caching:**
-- Vector embeddings cached to disk (MD5-based invalidation)
-- Reduces cold start from 2+ minutes to <5 seconds
-- Automatic cache regeneration when knowledge base changes
+- Vector embeddings cached to disk for faster subsequent loads
+- Helps reduce startup time after first run
+- Automatically updates when knowledge base changes
 
 **Batched Operations:**
-- Multiple questions processed in single API call
-- Reduced API quota usage by ~85%
-- Faster response times for complex applications
+- Processes multiple questions in a single API call
+- Reduces API quota usage
+- More efficient for multi-question applications
 
 ### 📊 Comprehensive Knowledge Base
 
@@ -251,8 +251,6 @@ def _get_cache_path(self) -> Path:
 
 ## 📸 Screenshots
 
-![Hero Banner](.github/screenshots/hero-banner.png)
-
 ### Sponsor Tailoring & Fit Analysis
 ![Fit Analysis](.github/screenshots/sponsor-fit-analysis.png)
 *When sponsor context is provided, GrantMate explains how it tailored responses, provides an honest fit score, and explains the alignment - this is where the magic happens!*
@@ -318,27 +316,18 @@ chmod +x run_local.sh
 
 ---
 
-## 📊 Project Impact
+## 💡 Potential Impact
 
-### Time Savings
+### Expected Time Savings
 
-| Task | Before | With GrantMate | Savings |
-|------|--------|----------------|---------|
-| **Research & Data Collection** | 1-2 days | 5 minutes | **99% faster** |
-| **Writing Responses** | 3-4 days | 30 minutes | **95% faster** |
-| **Tailoring to Sponsor** | 1-2 days | Automatic | **100% automated** |
-| **Finding Sources** | 1 day | Automatic citations | **100% automated** |
-| **Total Per Application** | ~1 week | ~1 hour | **~95% time reduction** |
+While exact metrics will vary by organization and grant complexity, GrantMate aims to significantly reduce time spent on:
 
-### Real-World Impact
+- **Data gathering** - Automated retrieval from knowledge base instead of manual searching
+- **First draft generation** - Quick initial responses that staff can refine
+- **Sponsor research** - Automated analysis of alignment with funder priorities
+- **Source tracking** - Automatic citations eliminate manual documentation
 
-For an organization like PHC that needs to submit **20-30 grants annually**:
-
-- **Before:** 20-30 weeks of staff time = **5-7 months** of full-time work
-- **After:** 20-30 hours of review/editing = **~1 week** of full-time work
-- **Time saved:** **~25 weeks** = 6+ months to focus on direct services
-
-**This could literally be the difference between survival and closure.**
+**Note:** This is still a prototype built during a hackathon. Real-world impact would need to be measured through actual deployment and user feedback. The goal is to give nonprofit staff a helpful starting point, not replace their expertise.
 
 ---
 
@@ -381,51 +370,45 @@ We have ambitious plans to expand GrantMate's capabilities:
 
 ### 3. 🧠 Enhanced AI Capabilities
 
-- **Multi-round editing** - Iterative refinement based on user feedback
-- **Budget generation** - Automatically create project budgets
-- **Letter of inquiry** support - Generate LOIs before full applications
-- **Multiple foundation profiles** - Store and reuse sponsor analysis
-- **A/B testing responses** - Generate multiple versions for comparison
+- Iterative refinement based on user feedback
+- Budget generation assistance
+- Letter of inquiry support
+- Multiple foundation profile management
+- Alternative response generation
 
-### 4. 📈 Analytics & Insights
+### 4. 📈 Analytics & Learning
 
-- Success rate tracking by sponsor type
-- Response pattern analysis (what works)
-- Knowledge base gap identification
-- Grant trends and opportunity forecasting
+- Track which approaches work well
+- Identify knowledge base gaps
+- Learn from successful applications
 
-### 5. 🤝 Multi-Organization Platform
+### 5. 🤝 Multi-Organization Support
 
-Scale beyond PHC:
-- Multi-tenant architecture
-- Custom knowledge bases per organization
-- Shared best practices (anonymized)
-- Nonprofit community features
+Potential to expand beyond PHC:
+- Support for multiple organizations
+- Customizable knowledge bases
+- Shared learnings (with privacy)
 
 ---
 
-## 🏆 Why This Matters
+## 🎯 Project Goals
 
-### Beyond the Hackathon
+### The Motivation
 
-This isn't just a weekend project—it's a **practical tool addressing a critical nonprofit sustainability challenge.**
+This project addresses a real challenge facing nonprofits: the significant time investment required for grant writing. While it's a hackathon project built over a weekend, it demonstrates how AI tools could potentially help organizations be more efficient without replacing the human expertise and relationships that are essential to fundraising.
 
-**Nonprofits are drowning in administrative burden** while their mission-critical work suffers. Grant writing, while essential for funding, pulls staff away from serving communities.
+### What We Built
 
-**GrantMate represents a new model:** AI that **amplifies human expertise** rather than replacing it. It handles data synthesis and first-draft generation, freeing nonprofit professionals to focus on strategy, relationships, and service delivery.
+This project showcases:
+- **RAG implementation** - Retrieval-augmented generation for grounded responses
+- **Prompt engineering** - Careful instruction design to maintain accuracy
+- **Full-stack development** - FastAPI backend with React frontend
+- **Real-world application** - Built based on actual nonprofit needs
+- **Responsible AI practices** - Guardrails, source attribution, honest limitations
 
-### Technical Excellence
+### Potential Applications
 
-This project demonstrates:
-- ✅ **Production-ready architecture** - Not a proof-of-concept, but a deployable system
-- ✅ **Sophisticated AI engineering** - RAG, prompt engineering, guardrails
-- ✅ **User-centered design** - Built with real nonprofit feedback
-- ✅ **Scalable infrastructure** - Ready to serve multiple organizations
-- ✅ **Responsible AI** - Truth guardrails, transparent sourcing, honest limitations
-
-### Social Impact
-
-**This could save nonprofit sector countless hours** and help organizations like PHC survive funding transitions. If deployed across San Francisco's nonprofit ecosystem, the collective impact could be transformative.
+If further developed and tested, tools like this could help nonprofits with their grant writing workflow. However, this remains a prototype that would need real-world validation, user testing, and significant refinement before being truly useful in production.
 
 ---
 
@@ -434,9 +417,9 @@ This project demonstrates:
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/YOUR_USERNAME.png" width="100px;" alt="Your Name"/><br />
-      <sub><b>Your Name</b></sub><br />
-      <a href="https://github.com/YOUR_USERNAME">@YOUR_USERNAME</a><br />
+      <img src="https://github.com/JosephLeKH.png" width="100px;" alt="Joseph Le"/><br />
+      <sub><b>Joseph Le</b></sub><br />
+      <a href="https://github.com/JosephLeKH">@JosephLeKH</a><br />
       <sub>Full Stack • AI/ML</sub>
     </td>
     <td align="center">
@@ -448,7 +431,7 @@ This project demonstrates:
   </tr>
 </table>
 
-**Built with ❤️ at [Hack for Social Impact 2025](https://www.hackforsocialimpact.com/)**
+**Built at Hack for Social Impact 2025**
 
 ### Our Contributions
 
@@ -466,10 +449,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Project Homeless Connect** - For their partnership, feedback, and inspiration
-- **Hack for Social Impact** - For organizing and supporting this work
-- **Google** - For Gemini API access
-- **The nonprofit community** - For doing incredible work with limited resources
+- **Project Homeless Connect** - For sharing their challenges and providing feedback
+- **Hack for Social Impact** - For organizing the hackathon
+- **Google** - For providing Gemini API access
 
 ---
 
@@ -477,16 +459,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Have questions or want to contribute? Open an issue or reach out!
 
-- **Project Repository:** [github.com/YOUR_USERNAME/GrantMate](https://github.com/YOUR_USERNAME/GrantMate)
-- **Issues:** [github.com/YOUR_USERNAME/GrantMate/issues](https://github.com/YOUR_USERNAME/GrantMate/issues)
-
 ---
 
 <div align="center">
 
-**⭐ Star this repo if you believe in using technology for social good! ⭐**
-
-Made with 💙 for nonprofits everywhere
+**A hackathon project exploring AI applications for nonprofit grant writing**
 
 </div>
 
